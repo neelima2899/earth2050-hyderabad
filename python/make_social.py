@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from model import allocate
 root=Path(__file__).resolve().parents[1]
-d=json.loads((root/'dist/data/hyderabad.json').read_text())
+d=json.loads((root/'docs/data/hyderabad.json').read_text())
 base,future,selected,_=allocate(d,2050,25,True)
 shown=future.astype(int);shown[selected]=200
 palette={0:'#101c1a',10:'#2c6349',20:'#62825a',30:'#7a9465',40:'#657d4e',50:'#dbb384',60:'#82806a',70:'#e3e5dd',80:'#5799b6',90:'#4e8873',95:'#3d6d60',100:'#8d9876',200:'#a7e56d'}
@@ -25,5 +25,5 @@ dr.text((45,425),'Your growth assumptions.',font=font(21),fill='#d1dacb')
 dr.text((45,485),'Explore a possible 2050 →',font=font(23,True),fill='#c7f186')
 dr.rectangle((660,60,1165,98),fill='#101c1a');dr.text((675,70),'2021 baseline + illustrative 2050 growth',font=font(16),fill='#f1f1e7')
 dr.text((45,575),'Neelima Donkada · ESA WorldCover 2021 · Rule-based experiment, not a prediction',font=font(15),fill='#a3b4a8')
-im.save(root/'dist/social.png')
+im.save(root/'docs/social.png')
 print('Created social preview')

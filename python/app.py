@@ -14,7 +14,7 @@ st.set_page_config(page_title='Earth 2050 | Hyderabad', page_icon='🌍', layout
 
 @st.cache_data
 def load_data():
-    return json.loads((ROOT/'dist/data/hyderabad.json').read_text())
+    return json.loads((ROOT/'docs/data/hyderabad.json').read_text())
 
 from model import allocate
 

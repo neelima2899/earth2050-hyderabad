@@ -12,14 +12,14 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run python/app.py
 ```
 
-The observed extracted grid is included, so the app runs without Google Earth Engine, credentials or a new satellite download. The browser dashboard can also be served from `dist/` with any static HTTP server.
+The observed extracted grid is included, so the app runs without Google Earth Engine, credentials or a new satellite download. The browser dashboard can also be served from `docs/` with any static HTTP server.
 
 ## Files
 
 - `python/prepare_data.py`: extract the source WorldCover tile, reproject with mode resampling to 100 m UTM 44N, generate suitability scores, and save JSON.
 - `python/app.py`: local Streamlit explorer using the same data and ranking rule.
-- `dist/data/hyderabad.json`: actual extracted WorldCover grid, metadata, and precomputed rule scores.
-- `dist/index.html`, `dist/app.js`, `dist/style.css`: hosted browser experience.
+- `docs/data/hyderabad.json`: actual extracted WorldCover grid, metadata, and precomputed rule scores.
+- `docs/index.html`, `docs/app.js`, `docs/style.css`: hosted browser experience.
 - `python/check_data.py`: structural and allocation-invariant checks, not scientific validation.
 
 ## Recreate the data

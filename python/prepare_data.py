@@ -68,7 +68,7 @@ def main():
             'attribution':'© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium',
             'license':'CC BY 4.0','grid':grid.ravel().tolist(),
             'scores':np.round(score.ravel(),3).tolist(),'landmarks':points}
-    output = ROOT/'dist/data/hyderabad.json'
+    output = ROOT/'docs/data/hyderabad.json'
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(data,separators=(',',':')))
     print(json.dumps({'shape':[height,width], 'classes':{str(v):int((grid==v).sum()) for v in np.unique(grid)},

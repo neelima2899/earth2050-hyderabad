@@ -5,7 +5,7 @@ import numpy as np
 from model import allocate
 
 root=Path(__file__).resolve().parents[1]
-d=json.loads((root/'dist/data/hyderabad.json').read_text())
+d=json.loads((root/'docs/data/hyderabad.json').read_text())
 grid=np.array(d['grid'])
 assert len(grid)==d['width']*d['height']==len(d['scores'])
 assert set(grid)<=set([0,10,20,30,40,50,60,70,80,90,95,100])
